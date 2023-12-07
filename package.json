@@ -1,0 +1,8 @@
+{
+  "name": "monorepo-template",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^8.0.0"
+  }
+}
