@@ -3,5 +3,5 @@
 module.exports = pkg1;
 
 function pkg1() {
-  return 'Hello from pkg1 now and coming soon!';
+  return 'Hello from pkg1 now and coming soon~';
 }
