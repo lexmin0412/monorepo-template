@@ -35,6 +35,6 @@ jobs:
           git config user.name lexmin0412
           git config user.email zhangle_dev@outlook.com
           pnpm whoami
-          pnpm ci:publish
+          pnpm ci:publish --legacy-auth ${{secrets.npm_token}}
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
