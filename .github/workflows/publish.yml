@@ -1,0 +1,24 @@
+name: publish node package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm ci:publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
