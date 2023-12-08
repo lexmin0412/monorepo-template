@@ -67,3 +67,17 @@ lerna publish
 ```
 
 按照提示选择版本号发布即可。
+
+### CI 集成
+
+在根目录的 scripts 中添加如下脚本：
+
+```json
+{
+	"scripts": {
+		"ci:publish": "lerna publish patch --yes"
+	}
+}
+```
+
+其中 patch 表示版本号递增级别，--yes 表示不开启 prompt。
