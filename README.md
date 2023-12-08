@@ -52,4 +52,18 @@ pkg2 包的 dependences 中会自动添加如下内容：
 }
 ```
 
+### 第一次发布
 
+在发布版本前，需要确认如下两点：
+
+- 将本地代码提交，否则 lerna 无法找到版本基准
+- packages 下的子包 package.json 中添加 publishConfig 配置, 声明 "access": "public"
+- 每个子包添加 "prepublish": "pnpm build" 脚本，以确保在 npm 发布前已基于最新版本构建
+
+执行以下命令：
+
+```
+lerna publish
+```
+
+按照提示选择版本号发布即可。
