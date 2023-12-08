@@ -1,6 +1,6 @@
 {
   "name": "@lexmin0412/monorepo-template-pkg2",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "lexmin0412 <zhangle_dev@outlook.com>",
   "homepage": "https://github.com/lexmin0412/monorepo-template#readme",
@@ -23,9 +23,9 @@
   "bugs": {
     "url": "https://github.com/lexmin0412/monorepo-template/issues"
   },
-	"publishConfig": {
-		"access": "public"
-	},
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@lexmin0412/monorepo-template-pkg1": "workspace:^"
   }
