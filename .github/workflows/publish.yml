@@ -1,40 +1,39 @@
 name: Publish npm packages
-
 on:
   push:
-    branches: [main]
-
-  workflow_dispatch:
+    branches:
+      - main
 
 permissions:
   contents: write
   id-token: write
 
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
 jobs:
-  # Build job
-  build:
+  version:
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: checkout code repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # Not needed if lastUpdated is not enabled
-      - uses: pnpm/action-setup@v2 # pnpm is optional but recommended, you can also use npm / yarn
-        with:
-          version: 8
-          cache: pnpm
-      - name: Setup Node
+          fetch-depth: 0
+      - name: setup node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: pnpm
-      - name: Install dependencies
+      - name: install pnpm
+        run: npm i pnpm@8 -g
+      - name: Setup npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+      - name: setup pnpm config
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+      - name: install dependencies
         run: pnpm install
       - name: Publish with Lerna
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
         run: |
-          echo -e ${{secrets.npm_token}} >> ~/.npmrc
           git config user.name lexmin0412
           git config user.email zhangle_dev@outlook.com
-          lerna publish from-package --yes
+          lerna publish patch --yes
