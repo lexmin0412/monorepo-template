@@ -1,11 +1,11 @@
 {
   "name": "monorepo-template",
   "private": true,
-	"scripts": {
-		"ci:publish": "lerna publish from-package --yes"
-	},
-  "dependencies": {},
+  "scripts": {
+    "ci:publish": "lerna publish from-package --yes"
+  },
   "devDependencies": {
-    "lerna": "^8.0.0"
+    "@lerna-lite/cli": "^3.1.0",
+    "@lerna-lite/publish": "^3.1.0"
   }
 }
