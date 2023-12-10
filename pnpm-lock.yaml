@@ -20,7 +20,7 @@ importers:
   packages/pkg2:
     dependencies:
       '@lexmin0412/monorepo-template-pkg1':
-        specifier: workspace:^
+        specifier: ^0.0.6
         version: link:../pkg1
 
 packages:
