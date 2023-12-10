@@ -1,6 +1,6 @@
 {
   "name": "@lexmin0412/monorepo-template-pkg2",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "> TODO: description",
   "author": "lexmin0412 <zhangle_dev@outlook.com>",
   "homepage": "https://github.com/lexmin0412/monorepo-template#readme",
@@ -27,7 +27,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@lexmin0412/monorepo-template-pkg1": "^0.0.14"
+    "@lexmin0412/monorepo-template-pkg1": "^0.0.15"
   },
   "gitHead": "8a7007d4a2fd0d7df455ea6bf6945d8a77dbc7b2"
 }
