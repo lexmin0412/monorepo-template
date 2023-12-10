@@ -34,6 +34,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
         run: |
+          echo -e ${{secrets.npm_token}} >> ~/.npmrc
           git config user.name lexmin0412
           git config user.email zhangle_dev@outlook.com
-          lerna publish from-package --yes --otp ${{secrets.npm_token}}
+          lerna publish from-package --yes
