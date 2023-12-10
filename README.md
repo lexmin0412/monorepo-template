@@ -81,3 +81,48 @@ lerna publish
 ```
 
 其中 patch 表示版本号递增级别，--yes 表示不开启 prompt。
+
+新增 .github/workflows/publish.yml 文件，填入如下内容：
+
+```yml
+name: Publish npm packages
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  id-token: write
+
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+jobs:
+  version:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install pnpm
+        run: npm i pnpm@8 -g
+      - name: Setup npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+      - name: install dependencies
+        run: pnpm install
+      - name: Publish with Lerna
+        run: |
+          git config user.name lexmin0412
+          git config user.email zhangle_dev@outlook.com
+          pnpm ci:publish
+
+```
+
+如果在 CI 中遇到发布npm 404或者403 的错误，请检查 npm token 是否失效即可，重新申请一个即可。
