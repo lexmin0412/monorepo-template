@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "ci:version": "lerna version patch --yes --conventional-commits",
-    "ci:publish": "lerna publish patch from-package --yes"
+    "ci:publish": "lerna publish from-package --yes"
   },
   "devDependencies": {
     "lerna": "^8.0.0"
