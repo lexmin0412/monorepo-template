@@ -2,7 +2,7 @@
   "name": "monorepo-template",
   "private": true,
   "scripts": {
-    "ci:version": "lerna version patch --yes --conventional-commits",
+    "ci:version": "lerna version patch --yes --conventional-commits --create-release github",
     "ci:publish": "lerna publish from-package --yes"
   },
   "devDependencies": {
