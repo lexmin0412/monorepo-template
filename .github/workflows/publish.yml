@@ -31,9 +31,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Publish with Lerna
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
         run: |
           git config user.name lexmin0412
           git config user.email zhangle_dev@outlook.com
-          pnpm ci:publish --legacy-auth ${{secrets.npm_token}}
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          pnpm ci:publish
