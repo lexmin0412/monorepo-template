@@ -1,6 +1,6 @@
 # Monorepo Template
 
-Monorepo 仓库模板。
+基于 Lerna8 + Pnpm workspace 的 Monorepo 仓库模板。
 
 ## Scripts
 
