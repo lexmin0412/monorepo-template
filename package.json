@@ -5,7 +5,6 @@
     "ci:publish": "lerna publish from-package --yes"
   },
   "devDependencies": {
-    "@lerna-lite/cli": "^3.1.0",
-    "@lerna-lite/publish": "^3.1.0"
+    "lerna": "^8.0.0"
   }
 }

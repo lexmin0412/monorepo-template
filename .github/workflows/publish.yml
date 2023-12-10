@@ -27,7 +27,7 @@ jobs:
       - name: install pnpm
         run: npm i pnpm@8 -g
       - name: Setup npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
       - name: install dependencies
         run: pnpm install
       - name: Publish with Lerna
