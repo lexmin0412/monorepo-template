@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.16](https://github.com/lexmin0412/monorepo-template/compare/v0.0.15...v0.0.16) (2023-12-10)
+
+
+### Bug Fixes
+
+* fix env declaration error ([22a1630](https://github.com/lexmin0412/monorepo-template/commit/22a1630d7c40660e9289fbc7167e1f212dbafe8c))
+
+
+### Features
+
+* add ~ ([65bf9c6](https://github.com/lexmin0412/monorepo-template/commit/65bf9c67a9d9079351f49be4a7a27765e867a4c2))
+
+
+
+
+
 ## [0.0.15](https://github.com/lexmin0412/monorepo-template/compare/v0.0.14...v0.0.15) (2023-12-10)
 
 
