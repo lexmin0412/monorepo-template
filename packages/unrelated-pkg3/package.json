@@ -22,5 +22,9 @@
   },
   "bugs": {
     "url": "https://github.com/lexmin0412/monorepo-template/issues"
+  },
+  "gitHead": "772fb396cd4adf0349cf12781f427bcac5f5abcc",
+  "publishConfig": {
+    "access": "public"
   }
 }
