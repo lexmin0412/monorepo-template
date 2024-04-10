@@ -17,7 +17,7 @@ importers:
   packages/pkg2:
     dependencies:
       '@lexmin0412/monorepo-template-pkg1':
-        specifier: ^0.0.21
+        specifier: ^0.0.22
         version: link:../pkg1
 
   packages/unrelated-pkg3: {}
